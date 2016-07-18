@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+body{
+	background-color:black;
+	color:white;
+	font-family:tahoma,sans-serif;
+	overflow:hidden;
+}
+#wrapper{
+	position:relative;
+	margin:auto;
+	width:990px;
+	height:auto;
+	overflow:hidden;
+}
+#my{
+	position:relative;
+	margin:auto;
+	width:990px;
+	height:auto;
+	margin-top:150px;
+	font-size:200px;
+	text-align:center;
+}
+#run{
+	font-size:100px;
+	font-style:italic;
+	color:red;
+	margin-left:-1000px;
+	width:500px;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="my">MY</div>
+	<div id="run">THEY RUN</div>
+</div>
+<script>
+
+window.onload=function(){
+	var my = document.getElementById("my");
+	var run = document.getElementById("run");
+	
+	setTimeout(function(){
+		my.innerHTML="FRIENDS";
+		setTimeout(function(){
+			my.innerHTML="DON'T";
+			setTimeout(function(){
+					my.innerHTML="<span style='color:grey'>WALK</span>";
+					setTimeout(function(){
+						run.style.transition="all 1s";
+						my.style.transition="all 1s";
+						run.style.marginLeft="1000px";
+						setTimeout(function(){
+							my.style.opacity=0;
+							},100);
+					},200);
+				},200);
+			},200);
+	},100);
+}
+</script>
+</body>
+</html>
